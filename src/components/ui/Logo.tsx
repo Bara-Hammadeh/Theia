@@ -5,50 +5,54 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
 /**
- * Theia mark: an aperture reticle formed from three connected nodes.
- * Rendered from a gradient so it glows on dark backgrounds.
+ * Theia mark: an eye whose iris is a camera aperture. Vision + a surgical lens.
+ * Rendered from a gradient so it glows on dark backgrounds; the single-stroke
+ * geometry also reads cleanly in monochrome and at favicon sizes.
  */
 export function LogoMark({ className }: { className?: string }) {
   const id = useId().replace(/[:]/g, "");
   const g = `theia-grad-${id}`;
   return (
     <svg
-      viewBox="0 0 32 32"
-      className={cn("h-7 w-7", className)}
+      viewBox="0 0 64 64"
+      className={cn("h-8 w-8", className)}
       role="img"
       aria-label={`${siteConfig.name} logo`}
       fill="none"
     >
       <defs>
-        <linearGradient id={g} x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+        <linearGradient id={g} x1="6" y1="10" x2="58" y2="54" gradientUnits="userSpaceOnUse">
           <stop stopColor="rgb(var(--accent))" />
           <stop offset="0.55" stopColor="rgb(var(--accent-2))" />
           <stop offset="1" stopColor="rgb(var(--iris))" />
         </linearGradient>
       </defs>
-      {/* outer lens ring */}
-      <circle cx="16" cy="16" r="13" stroke={`url(#${g})`} strokeWidth="1.5" opacity="0.9" />
-      {/* connecting edges */}
-      <g stroke={`url(#${g})`} strokeWidth="1.1" opacity="0.55">
-        <line x1="16" y1="16" x2="16" y2="7" />
-        <line x1="16" y1="16" x2="8.2" y2="20.5" />
-        <line x1="16" y1="16" x2="23.8" y2="20.5" />
-      </g>
-      {/* inscribed aperture triangle */}
+
+      {/* eye outline */}
       <path
-        d="M16 7 L23.8 20.5 L8.2 20.5 Z"
+        d="M6 32 C 18 13 46 13 58 32 C 46 51 18 51 6 32 Z"
         stroke={`url(#${g})`}
-        strokeWidth="1.5"
+        strokeWidth="2.4"
         strokeLinejoin="round"
-        opacity="0.95"
       />
-      {/* nodes */}
-      <g fill="rgb(var(--accent))">
-        <circle cx="16" cy="7" r="1.7" />
-        <circle cx="23.8" cy="20.5" r="1.7" />
-        <circle cx="8.2" cy="20.5" r="1.7" />
+
+      {/* iris = camera aperture */}
+      <g
+        transform="translate(32 32) scale(1.05) translate(-12 -12)"
+        stroke={`url(#${g})`}
+        strokeWidth="1.55"
+        strokeLinecap="round"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="14.31" y1="8" x2="20.05" y2="17.94" />
+        <line x1="9.69" y1="8" x2="21.17" y2="8" />
+        <line x1="7.38" y1="12" x2="13.12" y2="2.06" />
+        <line x1="9.69" y1="16" x2="3.95" y2="6.06" />
+        <line x1="14.31" y1="16" x2="2.83" y2="16" />
+        <line x1="16.62" y1="12" x2="10.88" y2="21.94" />
       </g>
-      <circle cx="16" cy="16" r="2.1" fill={`url(#${g})`} />
+
+      <circle cx="32" cy="32" r="1.7" fill={`url(#${g})`} />
     </svg>
   );
 }
@@ -68,7 +72,7 @@ export function Logo({
       {showWordmark && (
         <span
           className={cn(
-            "font-display text-[1.35rem] font-semibold tracking-tight text-ink",
+            "font-display text-[1.05rem] font-semibold uppercase tracking-[0.26em] text-ink",
             wordmarkClassName
           )}
         >
