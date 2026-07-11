@@ -10,20 +10,20 @@ const routes: { icon: IconName; title: string; body: string; email: string }[] =
   {
     icon: "handshake",
     title: "Partnerships",
-    body: "Surgical departments, hospital innovation offices, and industry.",
+    body: "Surgical departments, hospitals, and innovation offices.",
     email: siteConfig.emails.partnerships,
   },
   {
-    icon: "beaker",
-    title: "Research",
-    body: "Studies, datasets, benchmarks, and academic collaboration.",
-    email: siteConfig.emails.research,
+    icon: "shield",
+    title: "Security and data",
+    body: "Data governance questions and responsible disclosure.",
+    email: siteConfig.emails.security,
   },
   {
-    icon: "shield",
-    title: "Security & disclosure",
-    body: "Data governance questions and responsible vulnerability disclosure.",
-    email: siteConfig.emails.security,
+    icon: "pulse",
+    title: "Press",
+    body: "Media enquiries, briefings, and company information.",
+    email: siteConfig.emails.press,
   },
 ];
 
@@ -40,7 +40,7 @@ export function ContactCTA() {
               <span className="text-gradient">your institution</span>
             </>
           }
-          intro="Tell us about your procedure, your dataset, or your research question. We reply to every serious inquiry within two business days."
+          intro="Tell us about your procedure, your goals, or the pilot you have in mind. We reply to every serious inquiry within two business days."
         />
 
         <StaggerGroup className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-3">

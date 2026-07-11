@@ -6,7 +6,6 @@ import { siteConfig } from "@/config/site";
 const roles = [
   "Surgeon / Surgical department",
   "Hospital innovation office",
-  "Researcher / Academia",
   "Industry / Device maker",
   "Investor",
   "Other",
@@ -33,7 +32,7 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `[Theia] Inquiry — ${form.name}${form.org ? ` · ${form.org}` : ""}`;
+    const subject = `[Theia] Inquiry from ${form.name}${form.org ? ` at ${form.org}` : ""}`;
     const body = [
       `Name: ${form.name}`,
       `Email: ${form.email}`,
@@ -89,7 +88,7 @@ export function ContactForm() {
             id="org"
             value={form.org}
             onChange={update("org")}
-            placeholder="Department / hospital / institute"
+            placeholder="Department, hospital, or company"
             className={inputClass}
           />
         </div>
@@ -117,7 +116,7 @@ export function ContactForm() {
           rows={5}
           value={form.message}
           onChange={update("message")}
-          placeholder="Tell us about your procedure, dataset, or research question."
+          placeholder="Tell us about your procedure, your goals, or the pilot you have in mind."
           className={`${inputClass} resize-y`}
         />
       </div>
@@ -135,7 +134,7 @@ export function ContactForm() {
       <p className="mt-4 text-xs leading-relaxed text-faint">
         {sent ? (
           <span className="text-accent">
-            Opening your email client — if nothing happens, write to us at{" "}
+            Opening your email client. If nothing happens, write to us at{" "}
             <a href={`mailto:${siteConfig.email}`} className="underline">
               {siteConfig.email}
             </a>
@@ -143,7 +142,7 @@ export function ContactForm() {
           </span>
         ) : (
           <>
-            This form composes an email in your own mail client — nothing is stored on
+            This form composes an email in your own mail client. Nothing is stored on
             this site. Prefer email? Write to{" "}
             <a href={`mailto:${siteConfig.email}`} className="text-accent-2 underline">
               {siteConfig.email}

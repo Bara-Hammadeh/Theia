@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = createMetadata({
   title: "Cookie Policy",
   description:
-    "How this website uses cookies and similar technologies — kept to the minimum, with no advertising trackers.",
+    "How this website uses cookies and similar technologies, kept to the minimum, with no advertising trackers.",
   path: "/cookies",
 });
 
@@ -14,7 +14,7 @@ export default function CookiesPage() {
   return (
     <LegalLayout
       title="Cookie Policy"
-      subtitle="We keep this simple: a static website, no advertising trackers, and no selling of your data."
+      subtitle="We keep this simple: a lightweight website, no advertising trackers, and no selling of your data."
       updated="11 July 2026"
     >
       <p>
@@ -32,8 +32,11 @@ export default function CookiesPage() {
 
       <h2>Our approach</h2>
       <p>
-        This is a static website. <strong>By default we do not set advertising or
-        cross-site tracking cookies, and we do not run third-party ad networks.</strong>{" "}
+        This is a lightweight, mostly static website.{" "}
+        <strong>
+          By default we do not set advertising or cross-site tracking cookies, and we do
+          not run third-party ad networks.
+        </strong>{" "}
         We aim to use only what is strictly necessary to deliver the site.
       </p>
 
@@ -44,7 +47,7 @@ export default function CookiesPage() {
           securely. These are essential and cannot be switched off.
         </li>
         <li>
-          <strong>Preferences.</strong> If we later remember a choice (such as a theme),
+          <strong>Preferences.</strong> If we later remember a choice, such as a theme,
           it would fall here. These are optional.
         </li>
         <li>
@@ -56,9 +59,8 @@ export default function CookiesPage() {
 
       <h2>Hosting</h2>
       <p>
-        The site is served by GitHub Pages. Our host may process limited technical
-        information (such as your IP address) to deliver and protect the site, as
-        described in its own documentation.
+        The site is served by a static hosting provider that may process limited
+        technical information, such as your IP address, to deliver and protect the site.
       </p>
 
       <h2>Managing cookies</h2>

@@ -14,18 +14,18 @@ export default function NotFound() {
           Error 404 · Out of view
         </p>
         <h1 className="mt-4 text-5xl font-semibold sm:text-6xl">
-          <span className="text-gradient">Lost the thread.</span>
+          <span className="text-gradient">Page not found.</span>
         </h1>
         <p className="mx-auto mt-5 max-w-md text-muted">
-          This page isn&rsquo;t in our scene graph. It may have moved, or the link may be
-          incomplete. Let&rsquo;s get you back to solid ground.
+          This page is not part of the platform. It may have moved, or the link may be
+          incomplete. Let us get you back to solid ground.
         </p>
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button href="/" withArrow>
             Back to home
           </Button>
           <Button href="/technology" variant="secondary">
-            Explore the technology
+            Explore the platform
           </Button>
         </div>
       </Container>

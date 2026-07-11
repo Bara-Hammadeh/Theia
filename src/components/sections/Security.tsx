@@ -11,14 +11,14 @@ export function Security() {
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <Container>
         <SectionHeading
-          eyebrow="Security & Governance"
+          eyebrow="Security and Governance"
           title={
             <>
-              Hospital-ready from the{" "}
-              <span className="text-gradient">first line of code</span>
+              Hospital-ready{" "}
+              <span className="text-gradient">by design</span>
             </>
           }
-          intro="Trust is not a feature we added — it is the architecture. De-identification, encryption, immutable audit, versioning, and a license-aware registry are structural properties of the runtime, which is why moving from research to a regulated product changes data and weights, not the software."
+          intro="Trust is not a feature we bolt on. Privacy, security, and human oversight are part of how the platform is built, so it can meet the expectations of hospitals and regulators from the very beginning."
         />
 
         <StaggerGroup className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">

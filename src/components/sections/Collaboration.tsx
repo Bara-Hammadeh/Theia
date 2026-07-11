@@ -1,6 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { StaggerGroup, StaggerItem, Reveal } from "@/components/ui/Reveal";
+import { StaggerGroup, StaggerItem } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { collaborationModels } from "@/content/company";
@@ -13,15 +13,14 @@ export function Collaboration() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-16">
           <div className="lg:sticky lg:top-28 lg:self-start">
             <SectionHeading
-              eyebrow="For Surgeons"
+              eyebrow="For Surgeons and Hospitals"
               title={
                 <>
-                  Your video is the{" "}
-                  <span className="text-gradient-iris">most valuable dataset</span>{" "}
-                  in medicine
+                  Bring surgical intelligence into{" "}
+                  <span className="text-gradient-iris">your operating rooms</span>
                 </>
               }
-              intro="You already generate the signal that will define the next era of surgery — it simply goes unused. We built Theia so surgeons can turn that signal into research, education, and safer operations, on terms you control."
+              intro="We work closely with a small group of forward-looking surgical teams and hospitals. Whether you want to run a pilot, evaluate the platform, or help shape where it goes next, there is a clear way to start."
             />
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/partnerships" withArrow>
@@ -34,8 +33,9 @@ export function Collaboration() {
             <div className="mt-8 rounded-2xl border border-white/[0.07] bg-surface/40 p-5">
               <p className="text-sm leading-relaxed text-muted">
                 <span className="font-semibold text-ink">You stay in control.</span>{" "}
-                Video is de-identified, contributed under a consented agreement, and
-                remains yours. Nothing is used beyond the scope you approve.
+                We work only within the scope you approve, patient videos are not
+                permanently stored in routine operation, and your data always remains
+                yours.
               </p>
             </div>
           </div>

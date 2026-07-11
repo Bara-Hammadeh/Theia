@@ -11,25 +11,25 @@ import { values } from "@/content/company";
 export const metadata: Metadata = createMetadata({
   title: "Company",
   description:
-    "Theia is building the operating system for surgical intelligence — a deterministic runtime, an AI data factory, and a long-term mission to make surgery measurably safer.",
+    "Theia is building the operating system for surgical intelligence: two purpose-built AI products and a platform designed to make surgery measurably safer.",
   path: "/company",
 });
 
 const built: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "cpu",
-    title: "The SOG runtime",
-    body: "A deterministic, event-driven surgical AI platform: a scene-graph world model, typed events, and frame-accurate replay — the engine everything else runs on.",
+    title: "The Surgical Intelligence platform",
+    body: "A platform that turns surgical video into structured, measurable clinical intelligence, and the foundation for a new generation of real-time applications.",
   },
   {
     icon: "annotate",
-    title: "The annotation platform",
-    body: "AI-assisted surgical video annotation with SAM2 integration, dataset versioning, active learning, and clinical quality control — our data factory.",
+    title: "Annotation AI",
+    body: "A product that helps clinical experts build high-quality surgical datasets, faster and more consistently, with expert review at the center.",
   },
   {
     icon: "layers",
-    title: "The model pipeline",
-    body: "Reproducible training with a license-aware registry and ONNX deployment, producing surgical segmentation and phase models benchmarked against SAM2.",
+    title: "Proprietary perception models",
+    body: "Our own surgical perception models, developed in-house and validated against strong external benchmarks.",
   },
 ];
 
@@ -44,7 +44,7 @@ export default function CompanyPage() {
             <span className="text-gradient">for surgery</span>
           </>
         }
-        subtitle="Surgery is the highest-stakes environment in medicine and the least instrumented. Theia exists to change that — turning the operating room's richest signal into intelligence that makes every operation safer."
+        subtitle="Surgery is the highest-stakes environment in medicine and the least instrumented. Theia exists to change that, turning the operating room's richest signal into intelligence that makes every operation safer."
       />
 
       {/* Story */}
@@ -60,38 +60,35 @@ export default function CompanyPage() {
             <div className="space-y-5 text-lg leading-relaxed text-muted">
               <Reveal>
                 <p>
-                  Every year, hundreds of millions of operations are performed — and
-                  almost none of the video they generate is ever used to make the next
-                  operation better. The signal that could teach, warn, and validate
-                  simply evaporates when the camera turns off.
+                  Every year, hundreds of millions of operations are performed, and
+                  almost none of the video they produce is ever used to make the next
+                  one better. The signal that could teach, warn, and measure simply
+                  disappears when the camera turns off.
                 </p>
               </Reveal>
               <Reveal delay={0.05}>
                 <p>
-                  We started Theia because the tools to change that did not exist. The
-                  surgical AI in the literature was brilliant and irreproducible —
-                  one-off models that never left the lab, with no path to a hospital or
-                  a regulator. So we built the missing infrastructure first: a
-                  deterministic runtime, an AI-assisted data factory, and a reproducible
-                  pipeline that treats auditability as a design requirement.
+                  We started Theia because the tools to change that did not exist. Much
+                  of the surgical AI in the literature was brilliant and impossible to
+                  reproduce, with no realistic path to a hospital or a regulator. So we
+                  built the foundation first: two purpose-built AI products and a
+                  platform designed for privacy, security, and real clinical use.
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
                 <p>
-                  Our conviction is simple. If surgical AI is going to earn a place in
-                  the operating room, it has to be{" "}
-                  <span className="text-ink">deterministic, auditable, and honest</span>{" "}
-                  — able to show its work, admit its limits, and keep the surgeon in
-                  command. We designed for that from the first line of code, so the move
-                  from research to a regulated product changes the data and the weights,
-                  never the software.
+                  Our conviction is simple. For surgical AI to earn a place in the
+                  operating room, it has to be{" "}
+                  <span className="text-ink">dependable, private, and honest</span>,
+                  able to show its work, respect the patient, and keep the surgeon in
+                  command. We designed for that from the very first day.
                 </p>
               </Reveal>
               <Reveal delay={0.15}>
                 <p>
-                  We are a small, remote-first team of engineers and clinicians who care
-                  more about surgical safety than about demos. This is the beginning of
-                  a long project — and exactly the moment to help shape it.
+                  We are a focused team of engineers and clinicians who care more about
+                  surgical safety than about demos. This is the beginning of a long
+                  project, and exactly the moment to help shape it.
                 </p>
               </Reveal>
             </div>
@@ -105,7 +102,7 @@ export default function CompanyPage() {
           <SectionHeading
             eyebrow="What We've Built"
             title="A working foundation, not a pitch deck"
-            intro="Three systems already exist and work together. They are the platform on which clinical validation will be earned."
+            intro="Theia is already real. Two AI products and a proprietary platform work together today, and they are the base on which clinical value will be earned."
           />
           <StaggerGroup className="mt-12 grid gap-4 md:grid-cols-3">
             {built.map((b) => (
@@ -148,11 +145,11 @@ export default function CompanyPage() {
 
           <Reveal delay={0.1}>
             <div className="mt-12 flex flex-wrap gap-3">
-              <Button href="/careers" withArrow>
-                Join the team
-              </Button>
-              <Button href="/partnerships" variant="secondary">
+              <Button href="/partnerships" withArrow>
                 Partner with us
+              </Button>
+              <Button href="/contact" variant="secondary">
+                Contact the team
               </Button>
             </div>
           </Reveal>

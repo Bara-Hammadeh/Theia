@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useId } from "react";
 
-/** Animated "surgical intelligence core": video → scene graph → decision. */
+/** Animated "surgical intelligence core": surgical video into decision support. */
 export function HeroVisual({ className }: { className?: string }) {
   const reduce = useReducedMotion();
   const uid = useId().replace(/[:]/g, "");
@@ -37,7 +37,7 @@ export function HeroVisual({ className }: { className?: string }) {
       className={className}
       fill="none"
       role="img"
-      aria-label="Surgical video flowing through a scene graph into decision support"
+      aria-label="Surgical video transformed into clinical decision support"
     >
       <defs>
         <linearGradient id={grad} x1="0" y1="0" x2="720" y2="460" gradientUnits="userSpaceOnUse">
@@ -94,7 +94,7 @@ export function HeroVisual({ className }: { className?: string }) {
           </rect>
         )}
         <text x="52" y="272" className="font-mono" fill="rgb(var(--muted))" fontSize="9" letterSpacing="1.5">
-          VIDEO · INGEST
+          SURGICAL VIDEO
         </text>
       </g>
       {/* connector: video → graph */}
@@ -113,7 +113,7 @@ export function HeroVisual({ className }: { className?: string }) {
         <circle cx="582" cy="208" r="10" stroke="rgb(var(--accent))" strokeWidth="1.5" />
         <path d="M578 208 l3 3 l5 -6" stroke="rgb(var(--accent))" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         <text x="600" y="212" className="font-mono" fill="rgb(var(--ink))" fontSize="9" letterSpacing="1">
-          CVS · VERIFIED
+          SAFETY · IN VIEW
         </text>
         {/* uncertainty bars */}
         {[0, 1, 2].map((i) => (
@@ -212,7 +212,7 @@ export function HeroVisual({ className }: { className?: string }) {
         </circle>
       )}
       <text x={core.x} y={core.y + 34} textAnchor="middle" className="font-mono" fill="rgb(var(--muted))" fontSize="9" letterSpacing="2">
-        SCENE GRAPH
+        INTELLIGENCE
       </text>
     </svg>
   );

@@ -1,4 +1,4 @@
-/** Minimal className joiner — no runtime dependency. */
+/** Minimal className joiner. No runtime dependency. */
 export function cn(
   ...classes: Array<string | number | false | null | undefined>
 ): string {

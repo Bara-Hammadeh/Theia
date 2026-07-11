@@ -52,9 +52,8 @@ export function Hero() {
             variants={item}
             className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl"
           >
-            Theia turns surgical video into structured, auditable clinical
-            intelligence — a deterministic runtime for perception, reasoning,
-            evidence, and decision support, built for the operating room.
+            Theia turns surgical video into clinical insight, helping hospitals and
+            surgeons make every procedure safer, more consistent, and more measurable.
           </motion.p>
 
           <motion.div
@@ -65,7 +64,7 @@ export function Hero() {
               Partner with us
             </Button>
             <Button href="/technology" size="lg" variant="secondary">
-              Explore the technology
+              Explore the platform
             </Button>
           </motion.div>
 
@@ -73,7 +72,7 @@ export function Hero() {
             variants={item}
             className="mt-7 font-mono text-2xs uppercase tracking-[0.16em] text-faint"
           >
-            For surgeons · hospitals · research centers — investigational use
+            For surgeons, hospitals, and health systems · Investigational use
           </motion.p>
         </motion.div>
 

@@ -30,23 +30,21 @@ export function WhyDifferent() {
           title={
             <>
               Most surgical AI is a demo.{" "}
-              <span className="text-gradient-iris">Theia is a system.</span>
+              <span className="text-gradient-iris">Theia is a platform.</span>
             </>
           }
-          intro="The field is full of impressive one-off results that never leave the lab. We built for the opposite: reproducibility, auditability, and deployment — the things a hospital and a regulator actually require."
+          intro="The field is full of impressive results that never leave the lab. We built for the opposite: consistency, trust, and real deployment, the things a hospital and a regulator actually require."
         />
 
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
           {/* Conventional */}
           <Reveal>
             <div className="card h-full p-7 sm:p-8">
-              <div className="flex items-center gap-3">
-                <span className="font-mono text-2xs uppercase tracking-[0.18em] text-faint">
-                  Conventional research
-                </span>
-              </div>
+              <span className="font-mono text-2xs uppercase tracking-[0.18em] text-faint">
+                Conventional approaches
+              </span>
               <h3 className="mt-2 text-xl font-semibold text-muted">
-                Surgical video research, as usual
+                Surgical AI, as it usually looks
               </h3>
               <ul className="mt-6 space-y-4">
                 {differentiators.map((d) => (
@@ -66,13 +64,11 @@ export function WhyDifferent() {
           <Reveal delay={0.1}>
             <div className="card relative h-full overflow-hidden p-7 shadow-glow sm:p-8">
               <div className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-accent/10 blur-3xl" />
-              <div className="flex items-center gap-3">
-                <span className="font-mono text-2xs uppercase tracking-[0.18em] text-accent">
-                  The Theia platform
-                </span>
-              </div>
+              <span className="font-mono text-2xs uppercase tracking-[0.18em] text-accent">
+                The Theia platform
+              </span>
               <h3 className="mt-2 text-xl font-semibold text-ink">
-                Engineered for the operating room
+                Built for real clinical use
               </h3>
               <ul className="mt-6 space-y-4">
                 {differentiators.map((d) => (

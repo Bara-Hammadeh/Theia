@@ -43,7 +43,7 @@ export function Navbar() {
         )}
       >
         <nav className="container flex h-16 items-center justify-between md:h-[4.5rem]">
-          <Link href="/" aria-label={`Theia — home`} className="shrink-0">
+          <Link href="/" aria-label="Theia home" className="shrink-0">
             <Logo />
           </Link>
 

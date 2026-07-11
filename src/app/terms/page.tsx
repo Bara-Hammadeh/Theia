@@ -26,7 +26,7 @@ export default function TermsPage() {
       <h2>Informational purpose only</h2>
       <p>
         This website is provided for general informational purposes about our company
-        and our research. Its content may describe capabilities that are in development
+        and our work. Its content may describe capabilities that are in development
         or planned, and should not be read as a promise of future functionality,
         performance, or availability.
       </p>
@@ -34,13 +34,13 @@ export default function TermsPage() {
       <h2>Not medical advice; not a medical device</h2>
       <p>
         <strong>
-          {siteConfig.name} is an investigational research platform. It is not a medical
+          {siteConfig.name} is an investigational platform. It is not a medical
           device and has not been cleared or approved by the FDA, EMA, or any other
           regulatory authority for clinical use.
         </strong>{" "}
         Nothing on this website constitutes medical advice, diagnosis, or treatment, and
         nothing here should be relied upon to make clinical decisions. Any decision
-        support we describe is intended to augment — never replace — the independent
+        support we describe is intended to support, not replace, the independent
         judgment of a qualified, licensed clinician.
       </p>
 
@@ -53,8 +53,8 @@ export default function TermsPage() {
 
       <h2>Intellectual property</h2>
       <p>
-        The site and its content — including text, graphics, logos, and the{" "}
-        {siteConfig.name} name and marks — are owned by us or our licensors and are
+        The site and its content, including text, graphics, logos, and the{" "}
+        {siteConfig.name} name and marks, are owned by us or our licensors and are
         protected by intellectual-property laws. You may view and share the content for
         informational purposes, but you may not copy, modify, or use it commercially
         without our written permission.
@@ -93,7 +93,7 @@ export default function TermsPage() {
       <p>
         To the maximum extent permitted by law, {siteConfig.legalName} will not be liable
         for any indirect, incidental, special, consequential, or punitive damages, or any
-        loss arising from your use of — or inability to use — the site.
+        loss arising from your use of, or inability to use, the site.
       </p>
 
       <h2>Indemnification</h2>

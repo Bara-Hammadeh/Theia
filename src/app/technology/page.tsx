@@ -3,64 +3,83 @@ import { createMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/Container";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { StaggerGroup, StaggerItem, Reveal } from "@/components/ui/Reveal";
+import { StaggerGroup, StaggerItem } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { Icon, type IconName } from "@/components/ui/Icon";
-import { PlatformArchitecture } from "@/components/sections/PlatformArchitecture";
-import { DataFactory } from "@/components/sections/DataFactory";
+import { TwoProducts } from "@/components/sections/TwoProducts";
+import { Security } from "@/components/sections/Security";
 
 export const metadata: Metadata = createMetadata({
   title: "Technology",
   description:
-    "Inside Theia: a deterministic, event-driven surgical AI runtime built on a scene-graph world model, evidence and provenance, a license-aware registry, and a reproducible ONNX pipeline.",
+    "The Theia platform, at a glance: purpose-built for surgery, consistent and auditable, private and secure, and designed to deploy in real clinical environments.",
   path: "/technology",
 });
 
 const principles: { icon: IconName; title: string; body: string }[] = [
   {
-    icon: "reproduce",
-    title: "Deterministic runtime",
-    body: "An event-driven core: typed events on an in-process bus, a fixed scheduler, and frame-accurate replay. The same video always produces the same result — a prerequisite for trust and for regulation.",
+    icon: "shield",
+    title: "Purpose-built for surgery",
+    body: "Theia is not a general vision tool pointed at the operating room. It is designed from the ground up for the realities of surgical video and surgical workflows.",
   },
   {
-    icon: "graph",
-    title: "Scene-graph world model",
-    body: "A single, versioned representation of the operative scene — entities, relations, and temporal memory. Perception writes to it; reasoning reads from it. Fusion lives in one place, not scattered across scripts.",
+    icon: "reproduce",
+    title: "Consistent and dependable",
+    body: "The platform is built to produce reliable, repeatable results, the kind of consistency a clinical team can trust and a regulator expects.",
   },
   {
     icon: "evidence",
-    title: "Evidence & provenance",
-    body: "Every event carries a causal header: model versions, a configuration hash, and a code revision. Any inference can be traced back to the exact inputs and weights that produced it.",
+    title: "Trusted and auditable",
+    body: "Insight can be traced and reviewed rather than taken on faith, so the platform is never an unexplained black box.",
   },
   {
-    icon: "layers",
-    title: "Ports & adapters",
-    body: "A hexagonal architecture where the domain core depends only on interfaces. Every dataset, model, tracker, and visualizer is a swappable adapter selected by configuration — never a hard dependency.",
-  },
-  {
-    icon: "registry",
-    title: "License-aware registry",
-    body: "Models and datasets load through a registry with a policy gate. Under a commercial policy, anything not cleared for its use is refused — enforced both in CI and at runtime, so compliance is provable.",
+    icon: "lock",
+    title: "Private and secure",
+    body: "Privacy and security are designed in. The platform is built to operate without holding on to patient-identifying information.",
   },
   {
     icon: "deploy",
-    title: "Reproducible & portable",
-    body: "Config, data, and code are versioned together (Hydra, DVC, experiment tracking). Trained models export to ONNX and run on commodity GPUs — on-premises, in a private cloud, or at the edge.",
+    title: "Designed to deploy",
+    body: "Built to run in real clinical environments and to sit alongside the systems a hospital already uses.",
+  },
+  {
+    icon: "graph",
+    title: "Built to scale",
+    body: "Procedure-agnostic by design, so the platform extends across specialties and sites instead of being rebuilt for each one.",
   },
 ];
 
-const stack = [
-  "Python",
-  "PyTorch",
-  "ONNX Runtime",
-  "asyncio event bus",
-  "Hydra",
-  "DVC",
-  "Experiment tracking",
-  "SAM2",
-  "YOLOX",
-  "ByteTrack",
-  "Transformer phase models",
+const capabilities: { icon: IconName; title: string; body: string }[] = [
+  {
+    icon: "eye",
+    title: "What is in view",
+    body: "The instruments and anatomy present on screen, moment to moment.",
+  },
+  {
+    icon: "route",
+    title: "How the procedure flows",
+    body: "The steps of an operation and how it progresses from start to finish.",
+  },
+  {
+    icon: "pulse",
+    title: "The moments that matter",
+    body: "Key events and safety-relevant moments, recognized as they happen.",
+  },
+  {
+    icon: "log",
+    title: "A structured record",
+    body: "Each case captured as clear, structured, measurable information.",
+  },
+  {
+    icon: "assess",
+    title: "Objective measures",
+    body: "Consistent signals that support assessment, review, and quality improvement.",
+  },
+  {
+    icon: "decision",
+    title: "Support for the team",
+    body: "Insight delivered clearly, ready to support the surgical team today and in real time tomorrow.",
+  },
 ];
 
 export default function TechnologyPage() {
@@ -70,18 +89,18 @@ export default function TechnologyPage() {
         eyebrow="Technology"
         title={
           <>
-            A deterministic runtime for{" "}
-            <span className="text-gradient">surgical intelligence</span>
+            A platform built for the{" "}
+            <span className="text-gradient">operating room</span>
           </>
         }
-        subtitle="Theia is engineered like safety-critical infrastructure, not like a research demo. Six architectural commitments make it auditable, reproducible, and ready to move from the lab to the operating room without a rewrite."
+        subtitle="Theia is engineered like clinical infrastructure, not like a research demo. Here is what the platform does and the principles behind it, without the parts we keep behind closed doors."
       >
         <div className="flex flex-wrap gap-3">
-          <Button href="/research" variant="secondary" size="sm" withArrow>
-            See research progress
-          </Button>
-          <Button href="/partnerships" variant="ghost" size="sm">
+          <Button href="/partnerships" variant="secondary" size="sm" withArrow>
             Partner with us
+          </Button>
+          <Button href="/vision" variant="ghost" size="sm">
+            Where we are headed
           </Button>
         </div>
       </PageHeader>
@@ -91,7 +110,7 @@ export default function TechnologyPage() {
           <SectionHeading
             eyebrow="Design Principles"
             title="Six commitments, engineered in"
-            intro="These are not features on a roadmap — they are structural properties of the runtime. Change the data and the weights, and the same software carries you from research to a regulated product."
+            intro="These are the qualities that make Theia something a hospital can actually adopt. They shape every decision we make about the platform."
           />
           <StaggerGroup className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {principles.map((p) => (
@@ -109,37 +128,32 @@ export default function TechnologyPage() {
         </Container>
       </section>
 
-      <PlatformArchitecture />
-      <DataFactory />
+      <TwoProducts />
 
       <section className="section pt-0">
         <Container>
-          <Reveal>
-            <div className="rounded-3xl border border-white/[0.07] bg-surface/40 p-8 sm:p-10">
-              <span className="eyebrow">Engineering stack</span>
-              <h2 className="mt-4 text-2xl font-semibold sm:text-3xl">
-                Proven components, composed with discipline
-              </h2>
-              <p className="mt-3 max-w-2xl text-muted">
-                We do not reinvent what already works. We take best-in-class,
-                permissively-licensed building blocks and wire them behind clean
-                interfaces — so any one of them can be replaced without touching the
-                core.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2.5">
-                {stack.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-xs text-muted"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </Reveal>
+          <SectionHeading
+            eyebrow="What Theia Understands"
+            title="From pixels to clinical meaning"
+            intro="At a high level, the platform turns surgical video into a clear, structured understanding of a procedure. These are the kinds of things it can recognize and deliver."
+          />
+          <StaggerGroup className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {capabilities.map((c) => (
+              <StaggerItem key={c.title}>
+                <div className="card card-hover h-full p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-accent">
+                    <Icon name={c.icon} className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-5 text-base font-semibold">{c.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">{c.body}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerGroup>
         </Container>
       </section>
+
+      <Security />
     </>
   );
 }

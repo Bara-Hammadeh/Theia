@@ -9,22 +9,20 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = createMetadata({
   title: "Contact",
   description:
-    "Contact Theia about research collaboration, hospital partnerships, surgical video contribution, validation studies, and early access.",
+    "Contact Theia about hospital partnerships, pilot programs, product evaluation, early access, and investment.",
   path: "/contact",
 });
 
 const include = [
   "Your specialty and the procedure(s) of interest",
-  "Whether you have access to de-identified surgical video",
-  "The question or outcome you care about",
-  "Any timeline, IRB, or governance constraints",
+  "Whether you are exploring a pilot or an evaluation",
+  "The goal or outcome you care about",
+  "Any timeline or governance constraints",
 ];
 
 const directory: { label: string; email: string }[] = [
   { label: "Partnerships", email: siteConfig.emails.partnerships },
-  { label: "Research", email: siteConfig.emails.research },
-  { label: "Careers", email: siteConfig.emails.careers },
-  { label: "Security", email: siteConfig.emails.security },
+  { label: "Security and data", email: siteConfig.emails.security },
   { label: "Press", email: siteConfig.emails.press },
 ];
 
@@ -39,7 +37,7 @@ export default function ContactPage() {
             <span className="text-gradient">worth trusting</span>
           </>
         }
-        subtitle="Whether you are a surgeon with a question, a hospital exploring a pilot, a researcher seeking a collaborator, or an investor tracking the space — we would like to hear from you."
+        subtitle="Whether you are a surgeon with a question, a hospital exploring a pilot, or an investor tracking the space, we would like to hear from you."
       />
 
       <section className="pb-24">

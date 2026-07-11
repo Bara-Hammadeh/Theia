@@ -1,327 +1,163 @@
 import type { IconName } from "@/components/ui/Icon";
 
-/* ── What We Build: the value chain in five moves ─────────────── */
-export const whatWeBuild: {
-  icon: IconName;
-  title: string;
-  body: string;
-}[] = [
+/* ── What We Build: the value chain, at a glance ──────────────── */
+export const whatWeBuild: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "video",
-    title: "Video",
-    body: "Laparoscopic, endoscopic, robotic, and open-field surgical video — the richest, least-used signal in the operating room.",
+    title: "Surgical video",
+    body: "The operating room produces the richest data in medicine. Today almost none of it is put to use.",
   },
   {
     icon: "eye",
     title: "Perception",
-    body: "Detection, segmentation, and tracking turn raw pixels into instruments, anatomy, and events — frame by frame, with pixel precision.",
+    body: "Theia sees what happens inside a procedure: the instruments, the anatomy, and the actions, moment by moment.",
   },
   {
     icon: "reason",
-    title: "Reasoning",
-    body: "A structured scene graph lets the system reason about relationships, phases, and safety — not just what is on screen, but what it means.",
-  },
-  {
-    icon: "decision",
-    title: "Decision Support",
-    body: "Calibrated, evidence-backed guidance is surfaced to the surgeon in real time, with a human always in the loop.",
+    title: "Understanding",
+    body: "It interprets those observations in context, recognizing how an operation unfolds and the moments that matter most.",
   },
   {
     icon: "pulse",
-    title: "Clinical Intelligence",
-    body: "Every case becomes structured, auditable data — fuelling assessment, research, quality improvement, and safer surgery at scale.",
-  },
-];
-
-/* ── Platform Architecture: the eleven-stage runtime ──────────── */
-export type ArchLayer = "Ingest" | "Perception" | "World Model" | "Reasoning" | "Decision" | "Presentation";
-
-export const architectureStages: {
-  n: number;
-  title: string;
-  layer: ArchLayer;
-  icon: IconName;
-  body: string;
-}[] = [
-  {
-    n: 1,
-    title: "Video",
-    layer: "Ingest",
-    icon: "video",
-    body: "Frames enter with metadata but no patient identifiers — only opaque source IDs. The same interface serves a file, a dataset, or a live feed.",
+    title: "Intelligence",
+    body: "Every case becomes structured, measurable insight that a hospital and a surgeon can actually act on.",
   },
   {
-    n: 2,
-    title: "Detection",
-    layer: "Perception",
-    icon: "detect",
-    body: "Instruments, anatomy, and events are localized in a canonical label space that is independent of any single dataset.",
-  },
-  {
-    n: 3,
-    title: "Segmentation",
-    layer: "Perception",
-    icon: "segment",
-    body: "Pixel-precise masks delineate organs, tissue planes, and tools — the geometry every downstream inference depends on.",
-  },
-  {
-    n: 4,
-    title: "Tracking",
-    layer: "Perception",
-    icon: "track",
-    body: "Identities persist across time, so an instrument is the same instrument from the moment it enters the field to the moment it leaves.",
-  },
-  {
-    n: 5,
-    title: "Scene Graph",
-    layer: "World Model",
-    icon: "graph",
-    body: "A single, versioned world model — entities, relations, and temporal memory. It is the source of truth every module reads from and writes to.",
-  },
-  {
-    n: 6,
-    title: "Reasoning",
-    layer: "Reasoning",
-    icon: "reason",
-    body: "Spatial and temporal rules interpret the graph: what is near what, what is exposed, what has moved out of view, what should happen next.",
-  },
-  {
-    n: 7,
-    title: "Evidence",
-    layer: "Reasoning",
-    icon: "evidence",
-    body: "Every inference carries its provenance — model versions, a configuration hash, and the frames that support it. Auditable by construction.",
-  },
-  {
-    n: 8,
-    title: "Procedure Interpretation",
-    layer: "Reasoning",
-    icon: "procedure",
-    body: "Phases and steps are recognized against a procedure model: where in the operation are we, and what is the expected next move?",
-  },
-  {
-    n: 9,
-    title: "Assessment",
-    layer: "Reasoning",
-    icon: "assess",
-    body: "Safety milestones — such as the Critical View of Safety — risk states, and deviations from the expected path are evaluated continuously.",
-  },
-  {
-    n: 10,
-    title: "Decision",
-    layer: "Decision",
     icon: "decision",
-    body: "Context-aware support is composed with calibrated uncertainty and always routed through a human in the loop — never an autonomous action.",
-  },
-  {
-    n: 11,
-    title: "Presentation",
-    layer: "Presentation",
-    icon: "present",
-    body: "Overlays, a heads-up display, and structured summaries render the intelligence for the surgeon, the operative record, or a downstream system.",
+    title: "Decision support",
+    body: "That intelligence is delivered clearly and reliably, ready to support the surgical team today and in real time tomorrow.",
   },
 ];
 
-export const archLayerColor: Record<ArchLayer, string> = {
-  Ingest: "text-muted",
-  Perception: "text-accent",
-  "World Model": "text-accent-2",
-  Reasoning: "text-iris",
-  Decision: "text-signal",
-  Presentation: "text-muted",
-};
-
-/* ── AI Data Factory: eight stages, video → deployment ────────── */
-export const dataFactory: {
-  n: number;
+/* ── Two AI products ──────────────────────────────────────────── */
+export const products: {
+  tag: string;
+  name: string;
+  tagline: string;
   icon: IconName;
-  title: string;
   body: string;
+  points: string[];
 }[] = [
   {
-    n: 1,
-    icon: "video",
-    title: "Video",
-    body: "De-identified surgical footage from partners and public corpora enters a governed, consent-tracked pipeline.",
-  },
-  {
-    n: 2,
+    tag: "Product 01",
+    name: "Annotation AI",
+    tagline: "Expert-grade surgical data, built faster.",
     icon: "annotate",
-    title: "Annotation Platform",
-    body: "A purpose-built workspace for frame-accurate surgical labeling — masks, tracks, phases, and events.",
+    body: "Creating high-quality surgical data is slow, costly, and inconsistent. Our Annotation AI works alongside clinical experts to accelerate that work while improving accuracy and consistency. Expert human review stays central to the process, so the datasets it produces meet a high clinical bar.",
+    points: [
+      "Assists experts as they work with surgical video",
+      "Improves the speed and consistency of data creation",
+      "Keeps expert human review at the center of the workflow",
+      "Produces high-quality, carefully curated surgical datasets",
+    ],
   },
   {
-    n: 3,
-    icon: "sparkle",
-    title: "AI Assistance",
-    body: "SAM2-class models propose masks and tracks; annotators refine rather than draw from scratch — an order-of-magnitude throughput gain.",
-  },
-  {
-    n: 4,
-    icon: "review",
-    title: "Human Review",
-    body: "Clinical reviewers verify labels against gold standards, with inter-rater agreement and formal sign-off.",
-  },
-  {
-    n: 5,
-    icon: "dataset",
-    title: "Dataset",
-    body: "Versioned, licensed, and lineage-tracked — every sample knows where it came from and what it may be used for.",
-  },
-  {
-    n: 6,
-    icon: "train",
-    title: "Training",
-    body: "Reproducible pipelines bind config, data, and code by hash, turning datasets into candidate models you can re-run exactly.",
-  },
-  {
-    n: 7,
-    icon: "validate",
-    title: "Validation",
-    body: "Held-out, cross-institution benchmarks measure accuracy, calibration, and failure modes — including against SAM2.",
-  },
-  {
-    n: 8,
-    icon: "deploy",
-    title: "Deployment",
-    body: "Models export to portable ONNX runtimes and re-enter the platform as swappable, license-gated adapters.",
+    tag: "Product 02",
+    name: "Surgical Intelligence AI",
+    tagline: "Understanding surgery, directly from video.",
+    icon: "cpu",
+    body: "Our Surgical Intelligence platform analyzes surgical video to understand how a procedure unfolds and to generate clinical intelligence from it. It is the foundation for a new generation of real-time surgical applications, from operating-room awareness to context-aware decision support.",
+    points: [
+      "Analyzes surgical video at scale",
+      "Understands surgical workflows and the moments that matter",
+      "Generates structured, measurable clinical intelligence",
+      "Powers a roadmap of real-time surgical applications",
+    ],
   },
 ];
 
-/* ── Why We Are Different: the comparison ─────────────────────── */
+/* ── Why We Are Different: outcomes, not mechanisms ───────────── */
 export const differentiators: {
   dimension: string;
   traditional: string;
   theia: string;
 }[] = [
   {
-    dimension: "Reproducibility",
-    traditional: "One-off notebooks and scripts; results that can never be re-run the same way twice.",
-    theia: "Config, data, and code are hashed together — any result is re-derivable, bit-for-bit.",
+    dimension: "Consistency",
+    traditional: "Results that shift from one run to the next and can rarely be reproduced.",
+    theia: "Dependable, repeatable results a hospital can stand behind.",
   },
   {
-    dimension: "Auditability",
-    traditional: "Black-box outputs with no trace of how a conclusion was reached.",
-    theia: "Every inference carries provenance and the exact evidence that supports it.",
+    dimension: "Trust",
+    traditional: "Black-box outputs with no way to see how a conclusion was reached.",
+    theia: "Insight that can be traced and reviewed, built for clinical scrutiny.",
   },
   {
-    dimension: "Determinism",
-    traditional: "Nondeterministic pipelines — a different run gives a different answer.",
-    theia: "A deterministic runtime with full event logging and frame-accurate replay.",
+    dimension: "Scale",
+    traditional: "Research that never leaves the lab it was built in.",
+    theia: "A platform designed to scale across procedures, sites, and specialties.",
   },
   {
-    dimension: "Scalability",
-    traditional: "Research code that never leaves the lab it was written in.",
-    theia: "A platform: swap datasets, models, and whole procedures through configuration.",
-  },
-  {
-    dimension: "Dataset quality",
-    traditional: "Ad-hoc labels of unknown provenance and unclear licensing.",
-    theia: "Governed, versioned, license-aware datasets with clinical QC and lineage.",
+    dimension: "Data quality",
+    traditional: "Ad-hoc data of unknown quality and origin.",
+    theia: "Expert-grade data created under careful clinical governance.",
   },
   {
     dimension: "Deployment",
-    traditional: "A paper, a demo, and nothing that a hospital could ever run.",
-    theia: "Hospital-ready ONNX runtimes — on-prem, private cloud, or at the edge.",
+    traditional: "Prototypes a hospital could never actually run.",
+    theia: "Built to run in real clinical environments, not just on paper.",
+  },
+  {
+    dimension: "Governance",
+    traditional: "Little regard for privacy, security, or oversight.",
+    theia: "Privacy, security, and human oversight designed in from the start.",
   },
 ];
 
-/* ── Clinical Applications ────────────────────────────────────── */
-export const applications: {
-  title: string;
-  subtitle: string;
-  status: "Lead procedure" | "In development" | "On roadmap" | "Vision";
-  icon: IconName;
-  body: string;
-}[] = [
-  {
-    title: "Cholecystectomy",
-    subtitle: "Laparoscopic gallbladder removal",
-    status: "Lead procedure",
-    icon: "shield",
-    body: "The most-studied minimally invasive procedure and our reference implementation. Real-time phase recognition and continuous assessment of the Critical View of Safety — the single biggest lever against bile-duct injury.",
-  },
-  {
-    title: "Appendectomy",
-    subtitle: "Appendix removal",
-    status: "In development",
-    icon: "procedure",
-    body: "A high-volume, high-variability emergency procedure — ideal for phase modeling, workflow analytics, and objective skill assessment at scale.",
-  },
-  {
-    title: "Hernia Repair",
-    subtitle: "Inguinal & ventral repair",
-    status: "In development",
-    icon: "layers",
-    body: "Critical-anatomy awareness, mesh placement verification, and step-compliance checking across open and laparoscopic approaches.",
-  },
-  {
-    title: "Bariatric Surgery",
-    subtitle: "Sleeve gastrectomy & bypass",
-    status: "On roadmap",
-    icon: "route",
-    body: "Complex, multi-step metabolic surgery — anastomosis monitoring, staple-line awareness, and leak-risk context for the operative record.",
-  },
-  {
-    title: "Colorectal Surgery",
-    subtitle: "Resection & anastomosis",
-    status: "On roadmap",
-    icon: "compass",
-    body: "Tissue-plane identification, perfusion assessment, and total-mesorectal-excision quality — where surgical precision drives oncologic outcomes.",
-  },
-  {
-    title: "Future Procedures",
-    subtitle: "Foundation coverage",
-    status: "Vision",
-    icon: "graph",
-    body: "The runtime is procedure-agnostic. A new procedure is a knowledge-layer definition plus a dataset — not a rewrite of the system.",
-  },
+/* ── Clinical scope: procedure-agnostic ───────────────────────── */
+export const specialties: { icon: IconName; title: string }[] = [
+  { icon: "procedure", title: "General surgery" },
+  { icon: "route", title: "Bariatric surgery" },
+  { icon: "pulse", title: "Gastrointestinal surgery" },
+  { icon: "compass", title: "Colorectal surgery" },
+  { icon: "shield", title: "Gynecologic surgery" },
+  { icon: "layers", title: "Urologic surgery" },
+  { icon: "eye", title: "Thoracic surgery" },
+  { icon: "graph", title: "Surgical oncology" },
+  { icon: "cpu", title: "Robotic-assisted surgery" },
+  { icon: "sparkle", title: "Future minimally invasive procedures" },
 ];
 
-/* ── Security & Governance ────────────────────────────────────── */
-export const governance: {
-  icon: IconName;
-  title: string;
-  body: string;
-}[] = [
+/* ── Security & governance: generalized for public disclosure ──── */
+export const governance: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "lock",
     title: "Encryption everywhere",
-    body: "TLS in transit and AES-256 at rest. Keys are managed, rotated, and never committed to code.",
+    body: "Data is protected in transit and at rest using strong, modern encryption.",
   },
   {
     icon: "fingerprint",
-    title: "De-identified by design",
-    body: "The pipeline sees opaque source IDs and pixels — never names, MRNs, or protected health information.",
+    title: "Privacy by design",
+    body: "The platform is built to operate without holding on to patient-identifying information.",
   },
   {
     icon: "log",
-    title: "Immutable audit logs",
-    body: "Every event, model version, and access is recorded in an append-only log and can be replayed exactly.",
-  },
-  {
-    icon: "version",
-    title: "Versioned data & models",
-    body: "Datasets and checkpoints are content-addressed with complete lineage from raw frame to deployed weight.",
-  },
-  {
-    icon: "registry",
-    title: "License-aware registry",
-    body: "A runtime gate refuses to load any model or dataset not cleared for its intended use — provably, at build and at run time.",
-  },
-  {
-    icon: "reproduce",
-    title: "Reproducibility",
-    body: "Config, data, and code hashes make every training run and every inference re-derivable on demand.",
+    title: "Auditable by design",
+    body: "Insights can be traced and reviewed, so the platform is never an unexplained black box.",
   },
   {
     icon: "access",
-    title: "Access control & isolation",
-    body: "Least-privilege, role-based access. Institutions, studies, and tenants are cryptographically isolated.",
+    title: "Access control and isolation",
+    body: "Strict, least-privilege access, with each institution's data kept separate and isolated.",
+  },
+  {
+    icon: "shield",
+    title: "Data ownership",
+    body: "Your data remains yours. We operate only within the scope you approve.",
   },
   {
     icon: "human",
-    title: "Human-in-the-loop",
-    body: "Decision support augments the surgeon. The system never takes an autonomous clinical action — by design.",
+    title: "Human oversight",
+    body: "Clinical intelligence is built to support surgical teams, never to act on its own.",
+  },
+  {
+    icon: "reproduce",
+    title: "Governed improvement",
+    body: "Our AI advances through careful, validated development, not by quietly retaining customer data.",
+  },
+  {
+    icon: "validate",
+    title: "Built for compliance",
+    body: "Designed from the outset to meet the expectations of hospitals and regulators.",
   },
 ];

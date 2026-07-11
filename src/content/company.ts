@@ -1,6 +1,6 @@
 import type { IconName } from "@/components/ui/Icon";
 
-/* ── Collaboration models (surgeon-facing) ────────────────────── */
+/* ── Ways to engage (surgeon and hospital facing) ─────────────── */
 export const collaborationModels: {
   icon: IconName;
   title: string;
@@ -8,82 +8,69 @@ export const collaborationModels: {
 }[] = [
   {
     icon: "beaker",
-    title: "Research collaboration",
-    body: "Co-design and co-author studies. You bring the clinical question and domain expertise; we bring the platform, engineering, and reproducible analysis.",
+    title: "Pilot programs",
+    body: "Run a focused pilot on your own cases and see the platform at work in your environment, on your terms.",
   },
   {
-    icon: "video",
-    title: "Video partnerships",
-    body: "Contribute de-identified surgical video under a governed, consented agreement. You retain ownership and control; we handle the pipeline and security.",
-  },
-  {
-    icon: "annotate",
-    title: "Annotation collaboration",
-    body: "Define the ontology and gold standards for your specialty with our AI-assisted tools — building the reference dataset your field is missing.",
-  },
-  {
-    icon: "validate",
-    title: "Validation studies",
-    body: "Prospective and retrospective evaluation against your own outcomes, with transparent metrics, calibration, and documented failure modes.",
+    icon: "review",
+    title: "Product evaluation",
+    body: "Evaluate Theia against your clinical priorities and the realities of your day-to-day workflows.",
   },
   {
     icon: "sparkle",
     title: "Early access",
-    body: "Join a small group of design partners who shape the roadmap and are first to trial new capabilities in a research setting.",
+    body: "Join a small group of design partners who help shape the roadmap and are first to new capabilities.",
+  },
+  {
+    icon: "human",
+    title: "Clinical feedback",
+    body: "Bring your expertise to the table and help define how surgical intelligence should work in practice.",
+  },
+  {
+    icon: "layers",
+    title: "Workflow integration",
+    body: "Explore how Theia fits alongside your operating-room and analytics workflows, with your team.",
   },
 ];
 
-/* ── Partnership tracks (organization-facing) ─────────────────── */
+/* ── Partnership tracks (organization facing) ─────────────────── */
 export const partnershipTracks: {
   audience: string;
   weOffer: string[];
   weAsk: string[];
 }[] = [
   {
-    audience: "Surgical departments & surgeons",
+    audience: "Surgical departments and surgeons",
     weOffer: [
-      "Objective, video-based analytics for your cases",
-      "Co-authorship on research and validation studies",
-      "Tools for surgical education and skill assessment",
+      "Pilot programs run on your own cases",
+      "Early access to new capabilities",
+      "Tools built to fit real surgical workflows",
     ],
     weAsk: [
-      "A clinical champion and a well-scoped question",
-      "Access to de-identified video under a governed agreement",
-      "Time from a small annotation and review group",
+      "A clinical champion and a clear goal",
+      "A focused set of cases for a pilot",
+      "Candid clinical feedback along the way",
     ],
   },
   {
     audience: "Hospital innovation offices",
     weOffer: [
-      "A security- and governance-first partner, not a black box",
-      "A pilot that fits inside your data-governance framework",
-      "A clear path from research to a regulated pathway",
+      "A security- and privacy-first partner, not a black box",
+      "A pilot that fits inside your governance framework",
+      "A clear path from evaluation toward deployment",
     ],
     weAsk: [
-      "A sponsor to navigate IRB and data agreements",
+      "A sponsor to help navigate internal approvals",
       "A defined pilot scope and success criteria",
       "Introductions to interested surgical teams",
     ],
   },
   {
-    audience: "Research institutes & universities",
+    audience: "Industry and device makers",
     weOffer: [
-      "A reproducible platform for surgical data science",
-      "Shared datasets, benchmarks, and tooling",
-      "Engineering depth to turn ideas into results",
-    ],
-    weAsk: [
-      "Complementary methods or clinical expertise",
-      "Joint grant and publication participation",
-      "Data-sharing under clear, ethical terms",
-    ],
-  },
-  {
-    audience: "Industry & device makers",
-    weOffer: [
-      "A perception and reasoning layer for your hardware",
-      "ONNX-portable models and a clean integration surface",
-      "License-aware, audit-ready components",
+      "A surgical intelligence layer for your platform",
+      "A clean, well-defined integration surface",
+      "A partner focused on clinical safety",
     ],
     weAsk: [
       "A concrete integration target",
@@ -93,7 +80,7 @@ export const partnershipTracks: {
   },
 ];
 
-/* ── Research milestones ──────────────────────────────────────── */
+/* ── Milestones (kept for internal pages; scrubbed of internals) ─ */
 export type MilestoneStatus = "Shipped" | "In progress" | "Next" | "Horizon";
 
 export const milestones: {
@@ -103,75 +90,71 @@ export const milestones: {
 }[] = [
   {
     status: "Shipped",
-    title: "Deterministic surgical runtime",
-    body: "An event-driven scene-graph platform: typed events on an in-process bus, a versioned world model, and frame-accurate replay.",
+    title: "A working surgical intelligence platform",
+    body: "A deployable platform that turns surgical video into structured, measurable clinical intelligence.",
   },
   {
     status: "Shipped",
-    title: "AI-assisted annotation platform",
-    body: "SAM2-integrated surgical video annotation with dataset versioning, active learning, and clinical quality control.",
+    title: "Annotation AI",
+    body: "A product that helps clinical experts build high-quality surgical datasets quickly and consistently.",
   },
   {
     status: "Shipped",
-    title: "Reproducible ML pipeline",
-    body: "Config-, data-, and code-hashed training with a license-aware model registry and portable ONNX export.",
+    title: "Proprietary perception models",
+    body: "Our own surgical perception models, validated against strong external benchmarks.",
   },
   {
     status: "In progress",
-    title: "Surgical segmentation & phase models",
-    body: "Our first trained segmentation and phase-recognition models, benchmarked against SAM2 on public and partner data.",
+    title: "Deeper surgical understanding",
+    body: "Extending the platform from perception toward richer understanding of how procedures unfold.",
   },
   {
     status: "Next",
-    title: "Proprietary datasets via partnerships",
-    body: "Building governed, consented, cross-institution datasets — the foundation for models that generalize.",
+    title: "Hospital pilots",
+    body: "Focused pilots with clinical partners, run on their own cases and workflows.",
   },
   {
     status: "Next",
-    title: "Cross-institution validation",
-    body: "Prospective and retrospective studies with clinical partners, measuring real accuracy, calibration, and utility.",
+    title: "Broader specialty coverage",
+    body: "Expanding across the full range of minimally invasive surgery.",
   },
   {
     status: "Horizon",
-    title: "Surgical foundation models",
-    body: "Procedure-agnostic representations of surgery, learned across specialties and adaptable to a new operation with minimal data.",
+    title: "Real-time surgical applications",
+    body: "Bringing surgical intelligence into the operating room in real time.",
   },
   {
     status: "Horizon",
     title: "Regulatory pathway",
-    body: "A Software-as-a-Medical-Device path built on the auditability and reproducibility we designed in from day one.",
+    body: "Advancing toward the appropriate medical-device pathway, with rigor built in.",
   },
 ];
 
-/* ── Company values / vision pillars ──────────────────────────── */
-export const values: {
-  icon: IconName;
-  title: string;
-  body: string;
-}[] = [
+/* ── Company values ───────────────────────────────────────────── */
+export const values: { icon: IconName; title: string; body: string }[] = [
   {
     icon: "shield",
-    title: "Safety is the product",
-    body: "We measure ourselves by surgical safety and outcomes — not by demos. If it does not make an operation safer, it does not ship.",
+    title: "Safety is the measure",
+    body: "We judge ourselves by surgical safety and real outcomes, not by demos. If it does not make an operation safer, it does not ship.",
   },
   {
     icon: "evidence",
     title: "Evidence over claims",
-    body: "Every capability is backed by traceable evidence and honest metrics, including where the system fails.",
+    body: "Every capability is backed by honest evidence, including a clear-eyed view of where the system still falls short.",
   },
   {
     icon: "human",
     title: "Surgeons in command",
-    body: "The surgeon is the decision-maker. Our job is to give them sharper sight and better information, never to replace their judgment.",
+    body: "The surgeon makes the decisions. Our job is to give them sharper insight, never to replace their judgment.",
   },
   {
-    icon: "reproduce",
-    title: "Built once, built right",
-    body: "A rigorous, reproducible foundation means the move from research to regulated product changes data and weights — not the software.",
+    icon: "lock",
+    title: "Privacy is not negotiable",
+    body: "Patient privacy and data ownership come first. We earn trust by protecting them, on every case, without exception.",
   },
 ];
 
-/* ── Careers ──────────────────────────────────────────────────── */
+/* ── Careers (kept for internal page; scrubbed of internals) ──── */
 export const roles: {
   title: string;
   team: string;
@@ -179,87 +162,87 @@ export const roles: {
   body: string;
 }[] = [
   {
-    title: "Founding Surgical AI Research Engineer",
+    title: "Founding Surgical AI Engineer",
     team: "Research",
     type: "Full-time · Remote",
-    body: "Own perception and reasoning models end-to-end — from surgical video to deployable ONNX runtimes.",
+    body: "Own perception and understanding models end to end, from surgical video to a deployable product.",
   },
   {
-    title: "Computer Vision Engineer — Segmentation & Tracking",
+    title: "Computer Vision Engineer",
     team: "Perception",
     type: "Full-time · Remote",
-    body: "Push the accuracy and speed of surgical segmentation and multi-object tracking on real operative video.",
+    body: "Push the accuracy and speed of our surgical perception models on real operative video.",
   },
   {
-    title: "ML Platform / MLOps Engineer",
+    title: "ML Platform Engineer",
     team: "Platform",
     type: "Full-time · Remote",
-    body: "Harden the reproducible pipeline: data versioning, experiment tracking, the license-aware registry, and deployment.",
+    body: "Build the platform that trains, evaluates, and ships our models securely and reliably.",
   },
   {
     title: "Clinical Partnerships Lead",
     team: "Clinical",
     type: "Full-time · Hybrid",
-    body: "Build relationships with surgical departments and innovation offices, and shepherd data agreements and validation studies.",
+    body: "Build relationships with surgical departments and innovation offices, and shepherd pilots and evaluations.",
   },
   {
-    title: "Surgical Annotation Lead",
+    title: "Surgical Data Lead",
     team: "Data",
     type: "Full-time · Remote",
-    body: "Define surgical ontologies and gold standards, and run clinical quality control for the data factory. Clinical background valued.",
+    body: "Define surgical labeling standards and run clinical quality control for our Annotation AI. Clinical background valued.",
   },
   {
-    title: "Design Engineer — Visualization",
+    title: "Design Engineer",
     team: "Product",
     type: "Full-time · Remote",
-    body: "Craft the surgeon-facing interface: overlays, HUD, and uncertainty visualization that a surgeon can trust at a glance.",
+    body: "Craft the surgeon-facing experience: clear, trustworthy visuals a clinician can rely on at a glance.",
   },
 ];
 
-/* ── FAQ (surgeon & hospital specific) ────────────────────────── */
+/* ── FAQ (investor and hospital facing) ───────────────────────── */
 export const faqs: { q: string; a: string }[] = [
   {
-    q: "Is Theia a medical device we can use in the operating room today?",
-    a: "No. Theia is an investigational research platform under active development. It has not been cleared or approved by the FDA, EMA, or any other regulator, and it is not for clinical use. We partner with institutions for research and validation, and we are building toward a Software-as-a-Medical-Device pathway with auditability designed in from the start.",
+    q: "What is Theia?",
+    a: "Theia is a surgical intelligence platform. We turn surgical video into structured, measurable clinical insight that helps hospitals and surgeons make procedures safer, more consistent, and easier to learn from.",
+  },
+  {
+    q: "You mention two AI products. What is the difference?",
+    a: "We build two. Our Annotation AI helps clinical experts create high-quality surgical datasets, faster and more consistently, with expert human review at the center. Our Surgical Intelligence platform analyzes surgical video to understand how a procedure unfolds and to generate clinical intelligence, and it is the foundation for future real-time surgical applications.",
   },
   {
     q: "Does the AI make decisions instead of the surgeon?",
-    a: "Never. The system provides decision support — context, safety cues, and calibrated uncertainty — with a human always in the loop. It surfaces information and flags; the surgeon decides. Theia is built explicitly to augment surgical judgment, not to act autonomously.",
+    a: "No. Theia supports the surgical team with information and insight. The surgeon is always in control. The platform is built to assist clinical judgment, never to act on its own.",
   },
   {
-    q: "What happens to our surgical video and patient data?",
-    a: "You retain ownership. Video is de-identified before it enters the pipeline, which sees only opaque source IDs and pixels — never names, MRNs, or PHI. Data is encrypted in transit and at rest, access is least-privilege and logged, and everything flows under a governed, consented agreement that you control. See our Data Governance and Security pages for detail.",
+    q: "What happens to our patient videos and data?",
+    a: "Patient privacy and data ownership are central to how we operate. Patient videos are not permanently stored as part of routine product operation, your data remains yours, and we work strictly within the scope you approve.",
   },
   {
-    q: "How is this different from generic computer vision or an off-the-shelf model?",
-    a: "Three things. First, a deterministic runtime with full event logging and frame-accurate replay — the same input always yields the same result. Second, a structured scene-graph world model that reasons about relationships, phases, and safety rather than classifying isolated frames. Third, evidence: every inference carries its provenance and the frames that support it, so it can be audited.",
+    q: "Which procedures does the platform support?",
+    a: "The platform is procedure-agnostic. It is designed for the full range of minimally invasive surgery, spanning general, bariatric, gastrointestinal, colorectal, gynecologic, urologic, and thoracic surgery, along with surgical oncology and robotic-assisted procedures.",
   },
   {
-    q: "Do we need to give you a huge amount of labeled data to get started?",
-    a: "No. Our AI-assisted annotation platform gives roughly an order-of-magnitude throughput gain, and we can bootstrap from public surgical corpora and adapt to your ontology. A meaningful pilot typically starts with a focused, de-identified video set — not a mountain of pre-labeled data.",
+    q: "Can it run in our environment?",
+    a: "Yes. Theia is designed to deploy in real clinical settings and to sit alongside your existing operating-room and analytics workflows. We work with your team on integration rather than asking you to change how you operate.",
   },
   {
-    q: "Can it run in our environment, on our hardware?",
-    a: "Yes. Models export to portable ONNX runtimes and run on commodity GPUs. Deployment can be on-premises, in your private cloud, or at the edge near the operating room — you are not required to send data to us.",
+    q: "How does the platform improve over time?",
+    a: "Our AI advances through careful, governed development and validated learning processes. Improvement never depends on quietly retaining or repurposing customer data.",
   },
   {
-    q: "How do you handle bias, drift, and failure modes?",
-    a: "We validate across institutions, report calibration alongside accuracy, monitor for drift, and document known limitations openly. Our Responsible AI Statement describes how we surface uncertainty, avoid overconfident outputs, and keep clinicians in control. We treat honest reporting of failure modes as a feature, not a liability.",
+    q: "Is Theia a cleared medical device today?",
+    a: "Not yet. Theia is an investigational platform under active development and is not cleared or approved for clinical use. We build to the standards hospitals and regulators expect and are advancing toward the appropriate pathway.",
   },
   {
-    q: "What is the regulatory pathway, and how far along are you?",
-    a: "We are research-first today. The architecture is deliberately structured so that moving from research to a regulated product changes datasets, weights, and documentation — not the underlying software. Our Regulatory Roadmap outlines the intended Software-as-a-Medical-Device path and the evidence we are building toward.",
-  },
-  {
-    q: "We are interested. How do we start a collaboration?",
-    a: "It is deliberately low-lift: a short scoping call, a data-governance agreement, and a focused pilot dataset. From there we align on a research question and success criteria. Reach out through the contact page and we will follow up within two business days.",
+    q: "How do we get started?",
+    a: "Most partnerships begin with a short conversation and a focused pilot on your own cases. Reach out through the contact page and we will follow up within two business days.",
   },
 ];
 
 /* ── Headline stats ───────────────────────────────────────────── */
 export const stats: { value: string; label: string }[] = [
-  { value: "11", label: "Runtime stages from video to decision" },
-  { value: "10×", label: "Faster labeling with AI-assisted annotation" },
-  { value: "100%", label: "Inferences carrying traceable evidence" },
-  { value: "6", label: "Surgical procedures on the roadmap" },
+  { value: "2", label: "AI products, purpose-built for surgery" },
+  { value: "10×", label: "Faster creation of expert surgical data" },
+  { value: "10+", label: "Minimally invasive specialties in scope" },
+  { value: "1", label: "Platform, from video to clinical insight" },
 ];

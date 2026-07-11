@@ -11,23 +11,23 @@ import { partnershipTracks } from "@/content/company";
 const process = [
   {
     n: 1,
-    title: "Scoping call",
-    body: "A 30-minute conversation to align on the clinical question, the data, and whether a pilot is feasible. No obligation.",
+    title: "Introductory call",
+    body: "A short conversation to understand your goals and whether a pilot makes sense. No obligation.",
   },
   {
     n: 2,
-    title: "Data governance",
-    body: "A consented, de-identification-first data agreement that your legal, privacy, and IRB teams review and approve.",
+    title: "Pilot scope",
+    body: "We agree on a focused scope, clear success criteria, and a simple data arrangement your privacy and security teams approve.",
   },
   {
     n: 3,
-    title: "Pilot dataset",
-    body: "A focused set of de-identified cases to establish a baseline and demonstrate value on your own material.",
+    title: "Pilot",
+    body: "We run the pilot on your own cases, so you see the platform at work in your environment.",
   },
   {
     n: 4,
-    title: "Study & readout",
-    body: "Transparent metrics, a shared readout, and a decision on whether to publish, expand, or move toward validation.",
+    title: "Review and next steps",
+    body: "A shared readout of what we found, and a decision on whether to expand toward deployment.",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function PartnershipsPage() {
             <span className="text-gradient">built for trust</span>
           </>
         }
-        subtitle="We work with a deliberately small number of surgical departments, hospital innovation offices, research institutes, and industry partners. Every engagement is governed, consented, and structured to produce evidence — not hype."
+        subtitle="We work with a deliberately small number of surgical departments, hospitals, innovation offices, and industry partners. Every engagement is private, governed, and built around a clear, fair exchange of value."
       >
         <Button href="/contact" withArrow>
           Start a conversation
@@ -54,15 +54,15 @@ export default function PartnershipsPage() {
         <Container>
           <SectionHeading
             eyebrow="Who We Work With"
-            title="Four ways to partner"
-            intro="Whatever you bring — cases, a clinical question, complementary methods, or hardware — there is a track designed around a fair, transparent exchange of value."
+            title="Three ways to partner"
+            intro="Whatever you bring, cases, clinical priorities, or a platform to integrate with, there is a track designed around a fair exchange of value."
           />
-          <StaggerGroup className="mt-14 grid gap-4 lg:grid-cols-2">
+          <StaggerGroup className="mt-14 grid gap-4 lg:grid-cols-3">
             {partnershipTracks.map((t) => (
               <StaggerItem key={t.audience}>
                 <div className="card card-hover flex h-full flex-col p-7">
                   <h3 className="text-lg font-semibold text-ink">{t.audience}</h3>
-                  <div className="mt-5 grid gap-5 sm:grid-cols-2">
+                  <div className="mt-5 space-y-5">
                     <div>
                       <p className="font-mono text-2xs uppercase tracking-wider text-accent">
                         We offer
@@ -102,8 +102,8 @@ export default function PartnershipsPage() {
         <Container>
           <SectionHeading
             eyebrow="How It Works"
-            title="A low-lift path from hello to results"
-            intro="We keep the on-ramp light and the governance rigorous. Most partners go from first call to an approved pilot in weeks, not quarters."
+            title="A light path from hello to results"
+            intro="We keep the on-ramp simple and the governance rigorous. Most partners go from first call to a live pilot in weeks, not quarters."
           />
           <StaggerGroup className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {process.map((p) => (
@@ -124,15 +124,15 @@ export default function PartnershipsPage() {
               <div>
                 <h3 className="text-xl font-semibold">Ready to explore a pilot?</h3>
                 <p className="mt-2 text-muted">
-                  Bring a procedure and a question. We&rsquo;ll bring the platform.
+                  Bring a procedure and a goal. We will bring the platform.
                 </p>
               </div>
               <div className="flex shrink-0 gap-3">
                 <Button href="/contact" withArrow>
                   Contact the team
                 </Button>
-                <Button href="/research-collaboration" variant="secondary">
-                  Research collaboration
+                <Button href="/technology" variant="secondary">
+                  See the platform
                 </Button>
               </div>
             </div>

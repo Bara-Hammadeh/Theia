@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
 
 /**
- * Theia mark — an aperture/eye reticle whose inscribed triangle doubles as a
- * three-node scene graph. Rendered from a gradient so it glows on dark.
+ * Theia mark: an aperture reticle formed from three connected nodes.
+ * Rendered from a gradient so it glows on dark backgrounds.
  */
 export function LogoMark({ className }: { className?: string }) {
   const id = useId().replace(/[:]/g, "");
@@ -28,7 +28,7 @@ export function LogoMark({ className }: { className?: string }) {
       </defs>
       {/* outer lens ring */}
       <circle cx="16" cy="16" r="13" stroke={`url(#${g})`} strokeWidth="1.5" opacity="0.9" />
-      {/* scene-graph edges */}
+      {/* connecting edges */}
       <g stroke={`url(#${g})`} strokeWidth="1.1" opacity="0.55">
         <line x1="16" y1="16" x2="16" y2="7" />
         <line x1="16" y1="16" x2="8.2" y2="20.5" />

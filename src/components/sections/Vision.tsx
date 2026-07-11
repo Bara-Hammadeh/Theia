@@ -1,5 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { StaggerGroup, StaggerItem, Reveal } from "@/components/ui/Reveal";
+import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { values } from "@/content/company";
 
@@ -18,17 +19,33 @@ export function Vision() {
           <Reveal delay={0.05}>
             <h2 className="mt-6 text-balance text-3xl leading-[1.12] sm:text-4xl md:text-[2.8rem]">
               Every operation should make{" "}
-              <span className="text-gradient">every future operation safer.</span>
+              <span className="text-gradient">the next one safer.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 text-lg leading-relaxed text-muted">
-              A surgeon&rsquo;s skill lives in their hands and their memory. We believe
-              it should also live in a system that learns — so that hard-won judgment
-              compounds across cases, hospitals, and generations. Theia&rsquo;s long-term
-              mission is a surgical foundation model and an operating-room intelligence
-              layer that make surgery measurably safer, everywhere.
+              A surgeon&rsquo;s skill lives in their hands and their memory. We believe it
+              should also be supported by intelligence that learns responsibly, so that
+              hard-won judgment compounds across cases, hospitals, and generations. Our
+              long-term aim is an operating-room intelligence layer that makes surgery
+              measurably safer, everywhere.
             </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <p className="mt-5 text-sm leading-relaxed text-muted">
+              We hold ourselves to a clear line on privacy. Patient videos are not
+              permanently stored as part of routine product operation, data ownership
+              stays with our partners, and our AI improves only through carefully
+              governed development and validated learning, never by quietly retaining or
+              repurposing customer data.
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div className="mt-8 flex justify-center">
+              <Button href="/vision" variant="secondary" withArrow>
+                Explore our vision
+              </Button>
+            </div>
           </Reveal>
         </div>
 

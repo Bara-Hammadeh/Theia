@@ -30,11 +30,11 @@ export function WhatWeBuild() {
           eyebrow="What We Build"
           title={
             <>
-              From raw video to{" "}
+              From surgical video to{" "}
               <span className="text-gradient-iris">clinical intelligence</span>
             </>
           }
-          intro="Surgery generates the richest data in medicine and uses almost none of it. Theia closes that gap with a single, coherent value chain — five moves that turn what the camera sees into something a surgeon, a hospital, and a health system can act on."
+          intro="Surgery generates the richest data in medicine and uses almost none of it. Theia closes that gap, turning what the camera sees into insight a surgeon, a hospital, and a health system can act on."
         />
 
         <StaggerGroup className="mt-14 flex flex-col lg:flex-row lg:items-stretch">

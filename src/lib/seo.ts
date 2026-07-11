@@ -6,7 +6,7 @@ const ogImage = {
   url: `${siteConfig.url}/og.png`,
   width: 1200,
   height: 630,
-  alt: `${siteConfig.name} — ${siteConfig.tagline}`,
+  alt: `${siteConfig.name} · ${siteConfig.tagline}`,
 };
 
 const keywords = [
@@ -14,21 +14,21 @@ const keywords = [
   "surgical intelligence",
   "surgical video analysis",
   "computer-assisted surgery",
-  "surgical scene understanding",
   "operating room AI",
-  "surgical data science",
+  "surgical data",
   "clinical decision support",
-  "surgical phase recognition",
-  "Critical View of Safety",
+  "minimally invasive surgery",
   "medical device AI",
-  "surgical annotation platform",
+  "surgical analytics",
+  "hospital AI platform",
+  "surgical intelligence platform",
 ];
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
-    template: `%s — ${siteConfig.name}`,
+    default: `${siteConfig.name} · ${siteConfig.tagline}`,
+    template: `%s · ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
@@ -46,7 +46,7 @@ export const baseMetadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} · ${siteConfig.tagline}`,
     description: siteConfig.description,
     url: siteConfig.url,
     locale: "en_US",
@@ -54,9 +54,8 @@ export const baseMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} · ${siteConfig.tagline}`,
     description: siteConfig.description,
-    creator: "@theiasurgical",
     images: [ogImage.url],
   },
 };
@@ -76,13 +75,13 @@ export function createMetadata({
     description,
     alternates: { canonical: path },
     openGraph: {
-      title: `${title} — ${siteConfig.name}`,
+      title: `${title} · ${siteConfig.name}`,
       description,
       url: `${siteConfig.url}${path}`,
       images: [ogImage],
     },
     twitter: {
-      title: `${title} — ${siteConfig.name}`,
+      title: `${title} · ${siteConfig.name}`,
       description,
       images: [ogImage.url],
     },
@@ -104,16 +103,11 @@ export function structuredData() {
         slogan: siteConfig.tagline,
         foundingDate: String(siteConfig.foundedYear),
         email: siteConfig.email,
-        sameAs: [
-          siteConfig.social.linkedin,
-          siteConfig.social.x,
-          siteConfig.social.github,
-        ],
         knowsAbout: [
           "Surgical artificial intelligence",
           "Computer vision for surgery",
-          "Surgical scene graphs",
           "Clinical decision support",
+          "Minimally invasive surgery",
           "Medical device software",
         ],
       },
