@@ -1,0 +1,289 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   Theia design system — tokens
+   ============================================================ */
+:root {
+  /* Surfaces (near-black, cool) */
+  --bg: 6 8 12;            /* #06080C */
+  --surface: 10 14 20;     /* #0A0E14 */
+  --surface-2: 15 20 28;   /* #0F141C */
+  --elevated: 20 27 37;    /* #141B25 */
+
+  /* Ink */
+  --ink: 232 237 244;      /* #E8EDF4 */
+  --muted: 150 163 182;    /* #96A3B6 */
+  --faint: 96 107 124;     /* #606B7C */
+  --line: 255 255 255;     /* used at low alpha for hairlines */
+
+  /* Accents — surgical instrument mint → cyan, with an intelligence iris */
+  --accent: 45 227 200;    /* #2DE3C8 mint */
+  --accent-2: 34 211 238;  /* #22D3EE cyan */
+  --iris: 129 140 248;     /* #818CF8 indigo */
+  --signal: 245 185 74;    /* #F5B94A amber — evidence/alerts, used sparingly */
+
+  /* Type */
+  --font-display: "Segoe UI Variable Display", "SF Pro Display", -apple-system,
+    BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --font-sans: "Segoe UI Variable Text", "SF Pro Text", -apple-system,
+    BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", "Cascadia Code",
+    "Segoe UI Mono", Consolas, "Liberation Mono", Menlo, monospace;
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+@layer base {
+  * {
+    border-color: rgb(var(--line) / 0.08);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: rgb(var(--bg));
+    color: rgb(var(--ink));
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv11", "ss01";
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: rgb(var(--accent) / 0.28);
+    color: rgb(var(--ink));
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent) / 0.7);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--bg));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--elevated));
+    border-radius: 999px;
+    border: 3px solid rgb(var(--bg));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--faint) / 0.7);
+  }
+}
+
+/* ============================================================
+   Components / utilities
+   ============================================================ */
+@layer components {
+  /* Monospace eyebrow / technical label */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgb(var(--accent));
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(
+      100deg,
+      rgb(var(--ink)) 0%,
+      rgb(var(--ink)) 40%,
+      rgb(var(--accent)) 70%,
+      rgb(var(--accent-2)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-iris {
+    background-image: linear-gradient(
+      100deg,
+      rgb(var(--accent)) 0%,
+      rgb(var(--accent-2)) 45%,
+      rgb(var(--iris)) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Hairline-bordered translucent card */
+  .card {
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid rgb(var(--line) / 0.08);
+    background:
+      linear-gradient(180deg, rgb(var(--line) / 0.02), transparent 40%),
+      rgb(var(--surface) / 0.7);
+    backdrop-filter: blur(8px);
+  }
+
+  .card-hover {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    border-color: rgb(var(--accent) / 0.35);
+    box-shadow: 0 30px 80px -50px rgb(var(--accent) / 0.5);
+  }
+
+  .glass {
+    background: rgb(var(--surface) / 0.6);
+    backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid rgb(var(--line) / 0.08);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    border: 1px solid rgb(var(--line) / 0.1);
+    background: rgb(var(--surface-2) / 0.6);
+    padding: 0.3rem 0.75rem;
+    font-size: 0.75rem;
+    color: rgb(var(--muted));
+  }
+
+  /* Section vertical rhythm */
+  .section {
+    padding-top: clamp(4.5rem, 10vw, 8.5rem);
+    padding-bottom: clamp(4.5rem, 10vw, 8.5rem);
+  }
+
+  /* Faint dotted/line grid backdrop */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(var(--line) / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--line) / 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(70% 60% at 50% 40%, black, transparent 100%);
+    mask-image: radial-gradient(70% 60% at 50% 40%, black, transparent 100%);
+  }
+
+  /* Long-form legal / prose */
+  .prose-theia {
+    color: rgb(var(--muted));
+    font-size: 0.975rem;
+    line-height: 1.75;
+  }
+  .prose-theia h2 {
+    color: rgb(var(--ink));
+    font-size: 1.35rem;
+    margin-top: 2.75rem;
+    margin-bottom: 0.9rem;
+    scroll-margin-top: 6rem;
+  }
+  .prose-theia h3 {
+    color: rgb(var(--ink));
+    font-size: 1.08rem;
+    margin-top: 1.9rem;
+    margin-bottom: 0.6rem;
+  }
+  .prose-theia p {
+    margin-bottom: 1.1rem;
+  }
+  .prose-theia ul {
+    list-style: none;
+    margin: 0 0 1.3rem;
+    padding: 0;
+    display: grid;
+    gap: 0.55rem;
+  }
+  .prose-theia li {
+    position: relative;
+    padding-left: 1.4rem;
+  }
+  .prose-theia li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 6px;
+    height: 6px;
+    border-radius: 2px;
+    background: rgb(var(--accent));
+    box-shadow: 0 0 12px rgb(var(--accent) / 0.7);
+  }
+  .prose-theia strong {
+    color: rgb(var(--ink));
+    font-weight: 600;
+  }
+  .prose-theia a {
+    color: rgb(var(--accent-2));
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .prose-theia code {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    background: rgb(var(--surface-2));
+    border: 1px solid rgb(var(--line) / 0.1);
+    padding: 0.1rem 0.4rem;
+    border-radius: 6px;
+    color: rgb(var(--accent));
+  }
+}
+
+@layer utilities {
+  .mask-fade-y {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  }
+  .mask-fade-r {
+    -webkit-mask-image: linear-gradient(to right, black 60%, transparent);
+    mask-image: linear-gradient(to right, black 60%, transparent);
+  }
+  .animate-gradient-text {
+    background-size: 200% auto;
+    animation: gradient-pan 8s ease-in-out infinite;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
